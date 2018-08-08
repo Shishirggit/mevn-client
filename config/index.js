@@ -17,6 +17,12 @@ module.exports = {
         "changeOrigin": true,
         "secure": false
       } */
+      '/api': {
+        "target": 'http://localhost:3000',
+        "pathRewrite": { '^/api': '' },
+        "changeOrigin": true,
+        "secure": false
+      }
     }),
 
     // Various Dev Server settings

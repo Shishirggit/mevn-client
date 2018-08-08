@@ -45,7 +45,7 @@
 </template>
 
 <script>
-//  import SongsService from '@/services/SongsService'
+import SongsService from '@/services/SongsService'
 import Panel from '@/components/Panel'
 
 export default {
@@ -78,9 +78,9 @@ export default {
     async addSong () {
       try {
         this.error = null
-        // const response = await SongsService.addSong(this.song)
-        // this.songCreateMessage = response.data.message
-        console.log(this.song)
+        const response = await SongsService.addSong(this.song)
+        this.songCreateMessage = response.data.message
+        // console.log(this.song)
       } catch (err) {
         this.error = err.response.data.error
       }
