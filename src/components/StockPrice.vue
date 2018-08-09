@@ -55,7 +55,8 @@ export default {
     }
   },
   async mounted () {
-    this.socket = io('http://localhost:3000/')
+    this.socket = io('https://mevn-server.herokuapp.com', {secure: true, rejectUnauthorized: false})
+    // this.socket = io('/api/', {secure: true, rejectUnauthorized: false})
     // this.getStockDataSocket()
     // this.stockPrice = await this.getStockData()
   },
