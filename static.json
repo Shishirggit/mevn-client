@@ -1,0 +1,22 @@
+{
+    "root": "dist/",
+    "https_only": true,
+    "routes": {
+        "/assets/*": "/assets/",
+        "/**": "index.html"
+    },
+    "proxies": {
+        "/api/": {
+          "origin": "https://mevn-server.herokuapp.com/"
+        }
+    },
+    "headers": {
+        "/": {
+          "Cache-Control": "no-store, no-cache"
+        },
+        "**.js": {
+          "Cache-Control": "public, max-age=512000",
+          "Access-Control-Allow-Origin": "*"
+        }
+    }
+}
